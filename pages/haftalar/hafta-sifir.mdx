@@ -1,0 +1,171 @@
+---
+title: Hafta 0
+date: 2025/04/05
+description: Kablosuz haberleşmeye giriş, Kablosuz haberleşme protokolleri, Kablosuz haberleşme güvenliği.
+tag: wireless communication, wireless security 
+author: Abdullah Bagyapan
+---
+
+# Hafta 0
+
+**Amaç :** Kablosuz haberleşmenin açıklanması. Örnek protokollerin gösterilmesi. Güvenlik açısından incelenmesi.
+
+**Yazar :** [**abdullahbagyapan**](https://github.com/abdullahbagyapan)
+
+<hr/>
+
+
+## Kablosuz İletişime Giriş
+
+Kablosuz iletişim, elektriksel bir iletkenle bağlantısı olmayan iki veya daha fazla nokta arasında bilgi iletimi anlamına gelir.  
+
+Bu iletişim, elektromanyetik dalgalar kullanılarak gerçekleşir.
+
+
+<hr/>
+
+## Kablosuz İletişimin Uygulama Alanları
+
+Uygulama alanları oldukça geniştir ve modern yaşamın neredeyse her alanına nüfuz etmiştir:
+
+- **Hücresel Ağlar (2G, 3G, 4G LTE, 5G):** Mobil telefon görüşmeleri, internet erişimi ve çeşitli veri hizmetleri.
+- **Kablosuz Yerel Alan Ağları (WLAN/Wi-Fi):** Evlerde, ofislerde ve halka açık noktalarda yüksek hızlı internet erişimi.
+- **Bluetooth:** Kulaklık, klavye ve fare gibi cihazların kısa mesafeli bağlantısı.
+- **Uydu İletişimi:** Yayıncılık, navigasyon (GPS) ve uzak bölgelerle iletişim için uzun mesafeli iletişim.
+- **Radyo ve Televizyon Yayıncılığı:** Ses ve görüntü sinyallerinin geniş kitlelere iletilmesi.
+- **Uzaktan Kumandalar:** Elektronik cihazların kablosuz kontrolü.
+
+<hr/>
+
+## Elektromanyetik Dalga Nedir ?
+
+Elektromanyetik dalga, serbest uzayda Maxwell denklemlerinin bir çözümüdür; burada elektrik alan 𝐄, manyetik alan 𝐁 zamanla değişir ve hem birbirine hem de yayılma yönüne diktir.
+
+Boşlukta, elektromanyetik dalgalar enine dalgalardır ve şu şekilde tanımlanır:
+
+- **𝐄(x, t):** Elektrik alan vektörü
+- **𝐁(x, t):** Manyetik alan vektörü
+- Her ikisi de sinüs dalgası olarak salınır ve birbirine diktir.
+
+<CenteredImageLightbox alt="electromagnetic wave" src="/images/hafta0/electromagnetic-wave.png"/>
+
+<hr/>
+
+
+### Elektromanyetik Spektrum
+
+Elektromanyetik spektrum, EM dalgalarının frekans veya dalga boyuna göre sınıflandırılmasıdır.
+
+Tüm elektromanyetik dalgalar boşlukta aynı hızda (ışık hızı) hareket eder; ancak enerji, frekans ve dalga boyları farklıdır.
+
+<CenteredImageLightbox alt="electromagnetic spectrum" src="/images/hafta0/electromagnetic-spectrum.png"/>
+
+**Soru: Neden ışık dalga gibi davranmaz ?**
+
+<hr/>
+
+
+## Kablosuz İletişim Sisteminin Temel Bileşenleri
+
+Tipik bir kablosuz iletişim sistemi üç temel parçadan oluşur:
+
+- **Verici (Transmitter):** Bilgiyi iletime uygun kablosuz bir sinyale dönüştürür. Bu süreçte veri kodlanır ve taşıyıcı bir dalga üzerine modüle edilir.
+- **Kanal (Channel):** Kablosuz sinyalin vericiden alıcıya geçtiği fiziksel yoldur. Genellikle hava veya boşluktur ancak sinyalin yayılmasını etkileyen engeller ve atmosfer koşullarını da içerebilir.  
+- **Alıcı (Receiver):** İletilen kablosuz sinyali yakalar, demodüle ederek orijinal bilgiyi çıkarır ve kullanıcıya sunar.
+
+<CenteredImageLightbox alt="radio wave propagation" src="/images/hafta0/radio-wave-propagation.png"/>
+
+<hr/>
+
+
+## Kablosuz İletişimde Güvenlik
+
+Kablosuz iletişim sistemleri, yapısal zayıflıkları nedeniyle hacker'ların sıklıkla hedefi olur.
+
+Sinyallerin açık hava üzerinden iletilmesi, iletişimin dinlenmeye, manipülasyona ve izinsiz erişime daha açık hale gelmesine neden olur.
+
+Hacker'lar bu açıkları kullanarak gizliliği, bütünlüğü ve erişilebilirliği tehlikeye atar.
+
+<hr/>
+
+
+## Temel Zayıflıklar
+
+Kablosuz sistemler, sinyallerin açık ortamda iletilmesi nedeniyle kablolu sistemlere kıyasla doğası gereği daha savunmasızdır.
+
+- **Dinleme (Eavesdropping):** Hacker'lar şifrelenmemiş ya da zayıf şifreli sinyalleri yakalayabilir.
+- **Tekrar Saldırıları (Replay Attacks):** Hacker'lar geçerli iletimleri kaydeder ve tekrar oynatarak alıcıyı kandırır.
+- **Parazit (Jamming):** İletişimi bozmak için sinyale kasıtlı olarak müdahale edilir.
+
+<CenteredImageLightbox alt="mobile jammer" src="/images/hafta0/mobile-jammer.png"/>
+
+<CenteredImageLightbox alt="jammer car" src="/images/hafta0/jammer-car.png"/>
+
+<hr/>
+
+
+## Birkaç Hacker Terminolojisi
+
+- **Paket Dinleme (Packet Sniffing):** Hassas bilgileri toplamak için veri paketlerinin yakalanması.
+- **Ortadaki Adam Saldırısı (MitM):** İki taraf arasındaki iletişimin kesilerek değiştirilebilmesi.
+- **Hizmet Engelleme (DoS):** Ağa zararlı trafik yükleyerek bağlantının kesilmesi.
+
+<hr/>
+
+
+## İletişim Modelleri ve Saldırılar
+
+**Noktadan Noktaya İletişim:** İki cihaz doğrudan birbiriyle iletişim kurar (örneğin telefon ve baz istasyonu). Hacker’lar burada **dinleme** ya da **MitM** saldırıları ile cihazlardan birini taklit edebilir.
+
+**Noktadan Çok Noktaya İletişim:** Wi-Fi ve hücresel ağlar gibi sistemler, bir cihaz ile birden fazla alıcı arasında iletişimi mümkün kılar. Saldırganlar **sahte baz istasyonları** veya **kötü ikiz saldırıları** (sahte Wi-Fi erişim noktası oluşturma) ile verileri ele geçirebilir.
+
+### Saldırı Türleri
+
+- **Dinleme:** Saldırganlar **Wireshark** gibi araçlarla trafiği yakalayıp analiz edebilir. Şifreleme yoksa, şifreler ve e-postalar gibi hassas veriler kolayca ele geçebilir.
+- **DoS:** **RF Jammer** veya **Deauth saldırısı** gibi araçlarla kablosuz ağlar çalışmaz hale getirilebilir.
+- **MitM:** **SSLStrip** gibi araçlarla şifreli bağlantılar şifresiz hale getirilir ve veriler okunabilir ya da değiştirilebilir.
+
+<CenteredImageLightbox alt="gqrx" src="/images/hafta0/gqrx.png"/>
+
+<CenteredImageLightbox alt="hack RF" src="/images/hafta0/hack-rf.jpeg"/>
+
+<hr/>
+
+
+## Kablosuz Ağlar ve Saldırı Teknikleri
+
+### Wi-Fi Ağları
+
+- **WEP/WPA Kırma:** WEP çok zayıftır. **Aircrack-ng** ile veri paketleri toplanarak şifreleme anahtarı bulunabilir. WPA ise **sözlük saldırıları** ve el sıkışma yakalama ile kırılabilir.
+- **Kötü İkiz Saldırıları (Evil Twin Attacks):** Saldırgan, gerçek Wi-Fi ağı ile aynı isimde sahte bir erişim noktası kurarak kullanıcıyı kandırır. **Karma** veya **Airbase-ng** gibi araçlar kullanılır.
+- **Wi-Fi Pineapple:** Sahte erişim noktaları oluşturmak ve kimlik avı, MitM gibi saldırılar için kullanılan güçlü bir araçtır.
+
+<CenteredImageLightbox alt="Airbase-ng" src="/images/hafta0/airbase-ng.jpg"/>
+
+<CenteredImageLightbox alt="wireshark" src="/images/hafta0/wireshark.jpg"/>
+
+
+### Hücresel Ağlar
+
+- **Sahte Baz İstasyonları (IMSI Catchers):** **Stingray** gibi cihazlarla kullanıcıların çağrıları, mesajları ve konumları izlenebilir.
+- **SIM Kart Klonlama:** SIM karttaki IMSI yakalanarak kart kopyalanabilir ve ağa izinsiz erişim sağlanabilir.
+
+<CenteredImageLightbox alt="Stingray" src="/images/hafta0/stingray.png"/>
+
+
+### Bluetooth Saldırıları
+
+- **Bluejacking:** Yakınlardaki Bluetooth cihazlara istenmeyen mesajlar gönderilir.
+- **Bluesnarfing:** Cihazdaki kişi listesi, takvim gibi veriler izinsiz şekilde ele geçirilir.
+- **Bluebugging:** Cihazın kontrolü ele geçirilerek görüşmeler dinlenebilir, mesaj gönderilebilir veya arama yapılabilir.
+
+<hr/>
+
+## Bu hafta neler yaptık ?
+
+- **Kablosuz iletişimin ne olduğunu** ve uygulama alanlarını öğrendik.
+- **Elektromanyetik dalgaları** ve **elektromanyetik spectrumun** ne olduğunu öğrendik.
+- Kablosuz iletişimin **temel bileşenleri** ve **görevlerini** öğrendik.
+- Kablosuz iletişimde **güvenlik** ve **temel zafiyetleri** öğrendik.
+- Kablosuz iletişim modellerine göre zafiyetleri öğrendik.
+- **Kablosuz ağlar ve saldırı tekniklerini** öğrendik.
